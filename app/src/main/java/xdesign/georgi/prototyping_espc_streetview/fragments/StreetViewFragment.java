@@ -23,7 +23,6 @@ import xdesign.georgi.prototyping_espc_streetview.R;
  */
 public class StreetViewFragment extends Fragment implements OnStreetViewPanoramaReadyCallback {
     private StreetViewPanoramaFragment streetViewPanoramaFragment;
-//    private GoogleMap mMap;
 
 
     @Override

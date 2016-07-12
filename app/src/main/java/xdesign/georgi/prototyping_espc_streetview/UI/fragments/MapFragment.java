@@ -82,7 +82,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
 
 
-
+//Adding a comment
 //Add biggest image drawable overlay
 
         mDotMarkerBitmap = generateBitmapFromDrawable(R.drawable.circle_drawable3);

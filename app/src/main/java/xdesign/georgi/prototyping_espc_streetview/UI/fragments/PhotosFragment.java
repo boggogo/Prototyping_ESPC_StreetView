@@ -1,4 +1,4 @@
-package xdesign.georgi.prototyping_espc_streetview.fragments;
+package xdesign.georgi.prototyping_espc_streetview.UI.fragments;
 import android.os.Bundle;
 
 import android.support.annotation.Nullable;

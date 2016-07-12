@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import xdesign.georgi.prototyping_espc_streetview.fragments.MapFragment;
-import xdesign.georgi.prototyping_espc_streetview.fragments.PhotosFragment;
-import xdesign.georgi.prototyping_espc_streetview.fragments.StreetViewFragment;
+import xdesign.georgi.prototyping_espc_streetview.UI.fragments.MapFragment;
+import xdesign.georgi.prototyping_espc_streetview.UI.fragments.PhotosFragment;
+import xdesign.georgi.prototyping_espc_streetview.UI.fragments.StreetViewFragment;
 
 /**
  * Created by georgi on 11/07/16.

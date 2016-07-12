@@ -1,4 +1,4 @@
-package xdesign.georgi.prototyping_espc_streetview;
+package xdesign.georgi.prototyping_espc_streetview.UI;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,6 +25,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import xdesign.georgi.prototyping_espc_streetview.R;
 import xdesign.georgi.prototyping_espc_streetview.adapters.ESPCFragmentPageAdapter;
 import xdesign.georgi.prototyping_espc_streetview.adapters.NonSwipeableViewPager;
 

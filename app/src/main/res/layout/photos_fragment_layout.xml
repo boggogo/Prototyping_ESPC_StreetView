@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
-    <com.roughike.swipeselector.SwipeSelector
-        android:id="@+id/swipeSelector"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/galleryViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:layout_marginBottom="17dp"
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal|bottom" />
+
+    </FrameLayout>
+
 </RelativeLayout>

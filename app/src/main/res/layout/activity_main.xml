@@ -31,7 +31,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <!-- View pager to swipe views -->
-    <android.support.v4.view.ViewPager
+    <xdesign.georgi.prototyping_espc_streetview.adapters.NonSwipeableViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="fill_parent" />

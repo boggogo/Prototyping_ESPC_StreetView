@@ -26,13 +26,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import xdesign.georgi.prototyping_espc_streetview.adapters.ESPCFragmentPageAdapter;
+import xdesign.georgi.prototyping_espc_streetview.adapters.NonSwipeableViewPager;
 
 public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
     //This is our tablayout
     private TabLayout tabLayout;
 
     //This is our viewPager
-    private ViewPager viewPager;
+    private NonSwipeableViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +49,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //Initializing viewPager
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager = (NonSwipeableViewPager) findViewById(R.id.pager);
         viewPager.setOffscreenPageLimit(2);
-        viewPager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return true;
-            }
-        });
+
 
         //Creating our pager adapter
         ESPCFragmentPageAdapter adapter = new ESPCFragmentPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());

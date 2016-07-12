@@ -43,6 +43,6 @@ public class StreetViewFragment extends Fragment implements OnStreetViewPanorama
 
     @Override
     public void onStreetViewPanoramaReady(StreetViewPanorama streetViewPanorama) {
-        streetViewPanorama.setPosition(new LatLng(-33.87365, 151.20689));
+        streetViewPanorama.setPosition(new LatLng(55.959509, -3.200501));
     }
 }

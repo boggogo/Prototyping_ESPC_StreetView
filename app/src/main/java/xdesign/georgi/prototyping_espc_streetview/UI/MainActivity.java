@@ -1,4 +1,4 @@
-package xdesign.georgi.prototyping_espc_streetview;
+package xdesign.georgi.prototyping_espc_streetview.UI;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,20 +25,23 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import xdesign.georgi.prototyping_espc_streetview.R;
 import xdesign.georgi.prototyping_espc_streetview.adapters.ESPCFragmentPageAdapter;
+import xdesign.georgi.prototyping_espc_streetview.adapters.NonSwipeableViewPager;
 
 public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
     //This is our tablayout
     private TabLayout tabLayout;
 
     //This is our viewPager
-    private ViewPager viewPager;
+    private NonSwipeableViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("");
 //Initializing the tablayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 //Adding the tabs using addTab() method
@@ -48,14 +51,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //Initializing viewPager
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager = (NonSwipeableViewPager) findViewById(R.id.pager);
         viewPager.setOffscreenPageLimit(2);
-        viewPager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return true;
-            }
-        });
+
 
         //Creating our pager adapter
         ESPCFragmentPageAdapter adapter = new ESPCFragmentPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());

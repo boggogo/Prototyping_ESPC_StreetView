@@ -7,21 +7,24 @@
     android:fitsSystemWindows="true"
     tools:context=".UI.MainActivity">
 
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarcont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
 
         <!-- our tablayout to display tabs  -->
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
+            android:layout_marginTop="176dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -33,11 +36,12 @@
     <!-- View pager to swipe views -->
     <xdesign.georgi.prototyping_espc_streetview.adapters.NonSwipeableViewPager
         android:id="@+id/pager"
+        android:layout_below="@+id/appbarcont"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="wrap_content" />
 
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

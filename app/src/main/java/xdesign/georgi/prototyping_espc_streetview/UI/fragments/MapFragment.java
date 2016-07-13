@@ -48,8 +48,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private Bitmap mDotMarkerBitmap;
     private MarkerOptions markerOptions;
     private RippleBackground rippleBackground;
-    private GroundOverlay groundOverlay;
+    //    private GroundOverlay groundOverlay;
     private RadiusAnimation groundAnimation;
+    private AnimationSet breadingAnimations;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -64,8 +65,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-    }
 
+        breadingAnimations = new AnimationSet(false);
+//        breadingAnimations.setRepeatCount(Animation.INFINITE);
+//        breadingAnimations.setRepeatMode(Animation.RESTART);
+//        breadingAnimations.setStartOffset(500);
+
+    }
 
 
     //55.959814, -3.200565
@@ -81,44 +87,50 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //        mXDesignMarker = mMap.addMarker(markerOptions);
 
 
+//Add smallest image drawable overlay
 
-//Adding a comment
-//Add biggest image drawable overlay
+        Bitmap mDotMarkerBitmap1 = generateBitmapFromDrawable(R.drawable.circle_drawable);
 
-        mDotMarkerBitmap = generateBitmapFromDrawable(R.drawable.circle_drawable3);
+        GroundOverlay groundOverlay1 = mMap.addGroundOverlay(new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromBitmap(mDotMarkerBitmap1))
+                .position(xDesign, 80));
 
-        groundOverlay = mMap.addGroundOverlay(new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromBitmap(mDotMarkerBitmap))
-                .position(xDesign, 100));
-        groundAnimation = new RadiusAnimation(groundOverlay);
+        groundAnimation = new RadiusAnimation(groundOverlay1);
         groundAnimation.setRepeatCount(Animation.INFINITE);
         groundAnimation.setRepeatMode(Animation.RESTART);
-        groundAnimation.setDuration(900);
-        mapFragment.getView().startAnimation(groundAnimation); // MapView where i show my map
-//TODO  Fix the animation tomorrow
-//Add medium size image drawable overlay
-//        mDotMarkerBitmap = generateBitmapFromDrawable(R.drawable.circle_drawable2);
-//        groundOverlay = mMap.addGroundOverlay(new GroundOverlayOptions()
-//                .image(BitmapDescriptorFactory.fromBitmap(mDotMarkerBitmap))
-//                .position(xDesign, 100));
-//        groundAnimation = new RadiusAnimation(groundOverlay);
-//        groundAnimation.setRepeatCount(Animation.INFINITE);
-//        groundAnimation.setRepeatMode(Animation.RESTART);
-//        groundAnimation.setDuration(1400);
-//        mapFragment.getView().startAnimation(groundAnimation); // MapView where i show my map
-//
-////Add smallest size image drawable overlay
-//
-//        mDotMarkerBitmap = generateBitmapFromDrawable(R.drawable.circle_drawable);
-//        groundOverlay = mMap.addGroundOverlay(new GroundOverlayOptions()
-//                .image(BitmapDescriptorFactory.fromBitmap(mDotMarkerBitmap))
-//                .position(xDesign, 100));
-//        groundAnimation = new RadiusAnimation(groundOverlay);
-//        groundAnimation.setRepeatCount(Animation.INFINITE);
-//        groundAnimation.setRepeatMode(Animation.RESTART);
-//        groundAnimation.setDuration(2000);
-//        mapFragment.getView().startAnimation(groundAnimation); // MapView where i show my map
-//        //   Icons dont have animate method     icon.setAnimation(animation);
+        groundAnimation.setDuration(1200);
+//        groundAnimation.setStartOffset(700);
+        breadingAnimations.addAnimation(groundAnimation);
+
+
+        Bitmap mDotMarkerBitmap2 = generateBitmapFromDrawable(R.drawable.circle_drawable2);
+        GroundOverlay groundOverlay2 = mMap.addGroundOverlay(new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromBitmap(mDotMarkerBitmap2))
+                .position(xDesign, 200));
+
+        Animation groundAnimation2 = new RadiusAnimation(groundOverlay2);
+        groundAnimation2.setRepeatCount(Animation.INFINITE);
+        groundAnimation2.setRepeatMode(Animation.RESTART);
+        groundAnimation2.setDuration(2000);
+//        groundAnimation2.setStartOffset(1500);
+        breadingAnimations.addAnimation(groundAnimation2);
+
+
+        Bitmap mDotMarkerBitmap3 = generateBitmapFromDrawable(R.drawable.circle_drawable3);
+        GroundOverlay groundOverlay3 = mMap.addGroundOverlay(new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromBitmap(mDotMarkerBitmap3))
+                .position(xDesign, 300));
+
+        Animation groundAnimation3 = new RadiusAnimation(groundOverlay3);
+        groundAnimation3.setRepeatCount(Animation.INFINITE);
+        groundAnimation3.setRepeatMode(Animation.RESTART);
+//        groundAnimation3.setStartOffset(500);
+        groundAnimation3.setDuration(3000);
+
+        breadingAnimations.addAnimation(groundAnimation3);
+
+        mapFragment.getView().startAnimation(breadingAnimations); // start animation
+
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(xDesign, 15));
     }

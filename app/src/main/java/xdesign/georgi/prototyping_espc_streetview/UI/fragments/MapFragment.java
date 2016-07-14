@@ -71,6 +71,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //        breadingAnimations.setRepeatMode(Animation.RESTART);
 //        breadingAnimations.setStartOffset(500);
 
+
     }
 
 
@@ -78,6 +79,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.getUiSettings().setZoomGesturesEnabled(false);
 
 //        mDotMarkerBitmap = generateBitmapFromDrawable(R.drawable.circle_drawable);
 //        markerOptions = new MarkerOptions()
@@ -135,7 +137,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(xDesign, 15));
     }
 
-    private void LogThis(String message) {
+    private void logThis(String message) {
         Log.d(TAG, message);
     }
 

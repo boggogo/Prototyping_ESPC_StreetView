@@ -135,7 +135,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(xDesign, 15));
     }
 
-    private void LogThis(String message) {
+    private void logThis(String message) {
         Log.d(TAG, message);
     }
 

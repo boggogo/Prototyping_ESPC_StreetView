@@ -71,6 +71,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //        breadingAnimations.setRepeatMode(Animation.RESTART);
 //        breadingAnimations.setStartOffset(500);
 
+
     }
 
 
